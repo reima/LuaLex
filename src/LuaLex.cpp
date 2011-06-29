@@ -3,8 +3,6 @@
 #include <boost/spirit/include/lex_lexertl.hpp>
 #include <boost/bind.hpp>
 
-//#include <boost/spirit/include/phoenix.hpp>
-
 namespace LuaLex {
 namespace detail {
 
@@ -17,7 +15,6 @@ struct LuaLexer : lex::lexer<Lexer> {
       [lex::_pass = lex::ignore()];
 
     this->self.add
-      // TODO: skip whitespace
       ("--[^\\n]*"  ,       COMMENT)
       // TODO: multi line comments
                        
